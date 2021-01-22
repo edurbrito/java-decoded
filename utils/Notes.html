@@ -1,0 +1,837 @@
+<!DOCTYPE html><html><head>
+      <title>Notes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/edurbrito/.vscode-oss/extensions/shd101wyy.markdown-preview-enhanced-0.4.3/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h3 class="mume-header" id="big-java">BIG JAVA</h3>
+
+<ul>
+<li><a href="#BIG-JAVA">BIG JAVA</a>
+<ul>
+<li><a href="#Javadoc-Commenting">Javadoc Commenting</a></li>
+<li><a href="#Unit-Testing">Unit Testing</a></li>
+<li><a href="#Primitive-Types">Primitive Types</a></li>
+<li><a href="#Keyword-final">Keyword <em>final</em></a></li>
+<li><a href="#Big-Numbers">Big Numbers</a></li>
+<li><a href="#Arithmetics">Arithmetics</a></li>
+<li><a href="#Input-an-Output">Input an Output</a></li>
+<li><a href="#Decisions">Decisions</a></li>
+<li><a href="#Enumeration-Types">Enumeration Types</a></li>
+<li><a href="#Printing-Logs">Printing Logs</a></li>
+<li><a href="#Redirect-Input-and-Output">Redirect Input and Output</a></li>
+<li><a href="#Generating-Random-Numbers">Generating Random Numbers</a></li>
+<li><a href="#Enhanced-For-Loop">Enhanced For Loop</a></li>
+<li><a href="#Arrays-as-Parameters">Arrays as Parameters</a></li>
+<li><a href="#Array-Lists">Array Lists</a></li>
+<li><a href="#Designing-Classes">Designing Classes</a></li>
+<li><a href="#Call-by-Value-or-by-Reference">Call by Value or by Reference</a></li>
+<li><a href="#Object-Distinct-States">Object Distinct States</a></li>
+<li><a href="#Static-Variables-and-Methods">Static Variables and Methods</a></li>
+<li><a href="#Packages">Packages</a></li>
+<li><a href="#Unit-Test-FrameWorks">Unit Test FrameWorks</a></li>
+<li><a href="#Inheritance">Inheritance</a></li>
+<li><a href="#Override-Methods-from-SuperClass">Override Methods from SuperClass</a></li>
+<li><a href="#Polymorphism">Polymorphism</a></li>
+<li><a href="#Interfaces">Interfaces</a></li>
+<li><a href="#Throw-Exceptions">Throw Exceptions</a></li>
+<li><a href="#Collections">Collections</a></li>
+<li><a href="#Linked-List">Linked List</a></li>
+<li><a href="#Set">Set</a></li>
+<li><a href="#Map">Map</a></li>
+<li><a href="#Stack">Stack</a></li>
+<li><a href="#Queue">Queue</a></li>
+<li><a href="#Priority-Queue">Priority Queue</a></li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="javadoc-commenting">Javadoc Commenting</h4>
+
+<pre class="language-text">Provide documentation comments for 
+every class, every method, 
+every parameter variable, and every return value.
+</pre>
+<p>You can invoke the <em>javadoc</em> utility from a shell window, by issuing the command:<br>
+<code>javadoc MyClass.java</code><br>
+or, if you want to document multiple Java files,<br>
+<code>javadoc *.java</code></p>
+<p><strong>The javadoc utility copies the first sentence of each comment to a summary table in the HTML documentation</strong>.<br>
+Therefore, it is best to write that first sentence with some care.<br>
+It should start with an uppercase letter and end with a period.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>Starts with /** and Ends with */
+
+/** 
+Withdraws money from the bank account.
+@param amount the amount to withdraw
+*/
+public void withdraw(double amount)
+{
+implementation&#x2014;filled in later
+}
+/**
+Gets the current balance of the bank account.
+@return the current balance
+*/
+public double getBalance()
+{
+implementation&#x2014;filled in later
+}
+
+</code></pre><h4 class="mume-header" id="unit-testing">Unit Testing</h4>
+
+<pre class="language-text">To test a class, use an environment for interactive testing, 
+or write a tester class to execute test instructions.
+</pre>
+<p>Alternatively, you can write a tester class. A tester class is a class with a main method that contains statements to run methods of another class. As discussed in Section 2.7, a tester class typically carries out the following steps:</p>
+<ol>
+<li>Construct one or more objects of the class that is being tested.</li>
+<li>Invoke one or more methods.</li>
+<li>Print out one or more results.</li>
+<li>Print the expected results.</li>
+</ol>
+<h4 class="mume-header" id="primitive-types">Primitive Types</h4>
+
+<pre class="language-text">Java has eight primitive types, including four integer types
+and two floatingpoint types.
+</pre>
+<ul>
+<li>Notes: The largest number that can be represented in an int is denoted by <em>Integer.MAX_VALUE</em>. Its value is about 2.14 billion. Similarly, the smallest integer is <em>Integer.MIN_VALUE</em>, about &#x2013;2.14 billion.</li>
+</ul>
+<p><img src="Chapter_4/Primitive_Data_Types.png" alt="Primitive Data Types"></p>
+<h4 class="mume-header" id="keyword-_final_">Keyword <em>final</em></h4>
+
+<p>A <em>final</em> variable is a constant. Once its value has been set, it cannot be changed. Many programmers use all-uppercase names for constants (final variables), such as NICKEL_VALUE.</p>
+<p>Frequently, constant values are needed in several methods. Then you should declare them together with the instance variables of a class and tag them as <em>static</em> and <em>final</em>.<br>
+As before, <em>final</em> indicates that the value is a constant. The <em>static</em> reserved word means that the constant belongs to the class &#x2014; this is explained in greater detail in Chapter 8.):</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public class CashRegister
+    {
+        // Constants
+        public static final double QUARTER_VALUE = 0.25;
+        public static final double DIME_VALUE = 0.1;
+        public static final double NICKEL_VALUE = 0.05;
+        public static final double PENNY_VALUE = 0.01;
+        
+        // Instance variables
+        private double purchase;
+        private double payment;
+        
+        // Methods
+        . . .
+    }  
+
+</code></pre><h4 class="mume-header" id="big-numbers">Big Numbers</h4>
+
+<p>If you want to compute with really large numbers, you can use big number objects. Big number objects are objects of the <em>BigInteger</em> and <em>BigDecimal</em> classes in the java.math package. Unlike the number types such as int or double, big number objects have essentially no limits on their size and precision. However, computations with big number objects are much slower than those that involve number types. Perhaps more importantly, you can&#x2019;t use the familiar arithmetic operators such as (+ - *) with them. Instead, you have to use methods called add, subtract, and multiply. Here is an example of how to create a <em>BigInteger</em> object and how to call the multiply method:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>BigInteger n = new BigInteger(&quot;1000000&quot;);
+BigInteger r = n.multiply(n);
+System.out.println(r); // Prints 1000000000000
+</code></pre><p>The <em>BigDecimal</em> type carries out floating-point computations without roundoff errors. For example,</p>
+<pre data-role="codeBlock" data-info class="language-"><code>BigDecimal d = new BigDecimal(&quot;4.35&quot;);
+BigDecimal e = new BigDecimal(&quot;100&quot;);
+BigDecimal f = d.multiply(e);
+System.out.println(f); // Prints 435.00
+</code></pre><h4 class="mume-header" id="arithmetics">Arithmetics</h4>
+
+<p><img src="Chapter_4/Math_Operations.png" alt="Math Ops"></p>
+<p>For converting a value to another datatype use a cast <em>(typename)</em>:<br>
+<code>int dollars = (int) (total + tax);</code><br>
+To round it:<br>
+<code>long rounded = Math.round(balance);</code></p>
+<h4 class="mume-header" id="input-an-output">Input an Output</h4>
+
+<p><img src="Chapter_4/Input.png" alt="Input Ops"></p>
+<p>To format output we use:<br>
+<code>System.out.printf(&quot;Quantity: %d Total: %10.2f&quot;, quantity, total);</code><br>
+The <em>printf</em> method with options:</p>
+<p><img src="Chapter_4/Format_Specs.png" alt="Format Specifiers"></p>
+<h4 class="mume-header" id="decisions">Decisions</h4>
+
+<p>Java has a conditional operator of the form<br>
+<code>condition ? value1 : value2</code><br>
+The value of that expression is either value1 if the test passes or value2 if it fails. For example,<br>
+we can compute the actual floor number as<br>
+<code>actualFloor = floor &gt; 13 ? floor - 1 : floor;</code><br>
+which is equivalent to<br>
+<code>if (floor &gt; 13) { actualFloor = floor - 1; } else { actualFloor = floor; }</code></p>
+<h4 class="mume-header" id="enumeration-types">Enumeration Types</h4>
+
+<p>An enumeration type has a finite set of values, for example<br>
+<code>public enum FilingStatus { SINGLE, MARRIED, MARRIED_FILING_SEPARATELY }</code><br>
+You can have any number of values, but you must include them all in the enum declaration. You can declare variables of the enumeration type:<br>
+<code>FilingStatus status = FilingStatus.SINGLE;</code><br>
+If you try to assign a value that isn&#x2019;t a FilingStatus, such as 2 or &quot;S&quot;, then the compiler reports an error.<br>
+Use the == operator to compare enumeration values, for example:<br>
+<code>if (status == FilingStatus.SINGLE) . . .</code><br>
+Place the enum declaration inside the class that implements your program, such as</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public class TaxReturn
+{
+    public enum FilingStatus { SINGLE, MARRIED, MARRIED_FILING_SEPARATELY }
+    . . .
+}
+</code></pre><h4 class="mume-header" id="printing-logs">Printing Logs</h4>
+
+<p>Instead of printing directly to System.out, use the global logger object that is returned by the call <code>Logger.getGlobal()</code>. Then call the info method:</p>
+<p><code>Logger.getGlobal().info(&quot;status is SINGLE&quot;);</code></p>
+<p>By default, the message is printed. But if you call</p>
+<p><code>Logger.getGlobal().setLevel(Level.OFF);</code></p>
+<p>at the beginning of the main method of your program, all log message printing is suppressed.<br>
+Set the level to <code>Level.INFO</code> to turn logging of info messages on again.<br>
+Thus, you can turn off the log messages when your program works fine, and you can turn them back on if you find another error. In other words, using <code>Logger.getGlobal().info</code> is just like <code>System.out.println</code>, except that you can easily activate and deactivate the logging.</p>
+<h4 class="mume-header" id="redirect-input-and-output">Redirect Input and Output</h4>
+
+<p><img src="Chapter_4/Redirect_in_out.png" alt="Redirections"></p>
+<h4 class="mume-header" id="generating-random-numbers">Generating Random Numbers</h4>
+
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nextInt(n)</td>
+<td>A random integer between the integers 0 (inclusive) and n (exclusive)</td>
+</tr>
+<tr>
+<td>nextDouble()</td>
+<td>A random floating-point number between 0 (inclusive) and 1 (exclusive)</td>
+</tr>
+</tbody>
+</table>
+<pre data-role="codeBlock" data-info class="language-"><code>Random generator = new Random();
+int d = 1 + generator.nextInt(6);
+</code></pre><h4 class="mume-header" id="enhanced-for-loop">Enhanced For Loop</h4>
+
+<p>Use the enhanced for loop if you do not need the index values in the loop body.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>for (double element : values)
+{
+    ...
+    element = 0; // ERROR: this assignment does not modify array elements
+}
+</code></pre><p><img src="Chapter_7/Enh_For.png" alt="Enhanced For Loop"></p>
+<h4 class="mume-header" id="arrays-as-parameters">Arrays as Parameters</h4>
+
+<p>It is possible to declare methods that receive a variable number of arguments. For example, we can write a method that can add an arbitrary number of scores to a student:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>fred.addScores(10, 7); // This method call has two arguments
+fred.addScores(1, 7, 2, 9); // Another call to the same method, now with four arguments
+</code></pre><p>The method must be declared as</p>
+<p><code>public void addScores(int... values)</code></p>
+<p>The <code>int...</code> type indicates that the method can receive any number of int arguments. The values parameter variable is actually an <code>int[] array</code> that contains all arguments that were passed to the method</p>
+<h4 class="mume-header" id="array-lists">Array Lists</h4>
+
+<p><img src="Chapter_7/Array_Lists.png" alt="Array Lists"></p>
+<p>For most programming tasks, array lists are easier to use than arrays. Array lists can grow and shrink. On the other hand, arrays have a nicer syntax for element access and initialization.<br>
+Which of the two should you choose? Here are some recommendations.</p>
+<ul>
+<li>If the size of a collection never changes, use an array.</li>
+<li>If you collect a long sequence of primitive type values and you are concerned about efficiency, use an array.</li>
+<li>Otherwise, use an array list.</li>
+</ul>
+<h4 class="mume-header" id="designing-classes">Designing Classes</h4>
+
+<p>A class should represent a single concept from a problem domain, such as business, science, or mathematics.</p>
+<p>Very occasionally, a class has no objects, but it contains a collection of related static methods and constants. The Math class is an example. Such a class is called a utility class. Finally, you have seen classes with only a main method. Their sole purpose is to start a program. From a design perspective, these are somewhat degenerate examples of classes.</p>
+<p>The public interface of a class is <em><strong>cohesive</strong></em> if all of its features are related to the concept that the class represents.</p>
+<p>Some classes have been designed to have only accessor methods and no mutator methods at all. Such classes are called <strong>immutable</strong>. An example is the String class. Once a string has been constructed, its content never changes. No method in the String class can modify the contents of a string. For example, the toUpperCase method does not change characters from the original string. Instead, it constructs a new string that contains the uppercase characters.</p>
+<p>As a rule of thumb, a method that returns a value should not be a mutator. For example, one would not expect that calling getBalance on a BankAccount object would change the balance. If you follow this rule, then all mutators of your class have return type void.</p>
+<p>Sometimes, this rule is bent a bit, and mutator methods return an informational value. For example, the ArrayList class has a remove method to remove an object.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>ArrayList&lt;String&gt; names = . . .;
+boolean success = names.remove(&quot;Romeo&quot;);
+</code></pre><p>That method returns true if the removal was successful; that is, if the list contained the object. Returning this value might be bad design if there was no other way to check whether an object exists in the list. However, there is such a method&#x2013;&#x2013;the contains method. <strong>It is acceptable for a mutator to return a value if there is also an accessor that computes it.</strong><br>
+The situation is less happy with the Scanner class. The next method is a mutator that returns a value.  Unfortunately, there is no accessor that returns the same value. This sometimes makes it awkward to use a Scanner. You must carefully hang on to the value that the next method returns because you have no second chance to ask for it. It would have been better  if there was another method, say <em>peek</em>, that yields the next input without consuming it.</p>
+<h4 class="mume-header" id="call-by-value-or-by-reference">Call by Value or by Reference</h4>
+
+<p>&#x2022; A Java method can&#x2019;t change the contents of any variable passed as an argument.<br>
+&#x2022; A Java method can mutate an object when it receives a reference to it as an argument.</p>
+<p>In Java, a method <strong>can never change</strong> the original contents of a <strong>variable</strong> that is passed to a method.</p>
+<p>In Java, a method <strong>can change</strong> the state of <strong>an object reference argument</strong>, but it <strong>cannot replace</strong> the object reference with another.</p>
+<h4 class="mume-header" id="object-distinct-states">Object Distinct States</h4>
+
+<p>If your object can have one of several states that affect the behavior, supply an instance variable for the current state.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public class Fish
+{
+    private int hungry;
+    public static final int NOT_HUNGRY = 0;
+    public static final int SOMEWHAT_HUNGRY = 1;
+    public static final int VERY_HUNGRY = 2;
+    . . .
+}
+(Alternatively, you can use an enumeration&#x2013;&#x2013;see Special Topic 5.4)
+</code></pre><p>Determine which methods change the state. In this example, a fish that has just eaten won&#x2019;t be hungry. But as the fish moves, it will get hungrier:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public void eat()
+{
+    hungry = NOT_HUNGRY;
+    . . .
+}
+public void move()
+{
+    . . .
+    if (hungry &lt; VERY_HUNGRY) { hungry++; }
+}
+</code></pre><p>Finally, determine where the state affects behavior. A fish that is very hungry will want to look for food first:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public void move()
+{
+        if (hungry == VERY_HUNGRY)
+        {
+        Look for food.
+        }
+        . . .
+}
+</code></pre><h4 class="mume-header" id="static-variables-and-methods">Static Variables and Methods</h4>
+
+<p>A static variable belongs to the class, not to any object of the class.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public class BankAccount
+{
+    private double balance;
+    private int accountNumber;
+    private static int lastAssignedNumber = 1000;
+    
+    public BankAccount()
+    {
+       lastAssignedNumber++;
+       accountNumber = lastAssignedNumber;
+    }
+    . . .
+}
+</code></pre><p>Every BankAccount object has its own balance and accountNumber instance variables, but <strong>all objects share a single copy of the lastAssignedNumber variable</strong>. That variable is stored in a separate location, outside any BankAccount objects.</p>
+<p><strong>Like instance variables, static variables should always be declared as private to ensure that methods of other classes do not change their values</strong>. However, static constants may be either private or public.</p>
+<p>Sometimes a class defines methods that are not invoked on an object. Such a method is called a <strong>static method</strong>. A typical example of a static method is the <em>sqrt method in the Math clas</em>s. Because numbers aren&#x2019;t objects, you can&#x2019;t invoke methods on them. For example, if x is a number, then the call x.sqrt() is not legal in Java. Therefore, the Math class provides a static method that is invoked as Math.sqrt(x). No object of the Math class is constructed. The Math qualifier simply tells the compiler where to find the sqrt method.</p>
+<p>There is a variant of the import directive that lets you use static methods and variables without class prefixes. For example,</p>
+<pre data-role="codeBlock" data-info class="language-"><code>import static java.lang.System.*;
+import static java.lang.Math.*;
+public class RootTester
+{
+    public static void main(String[] args)
+    {
+        double r = sqrt(PI); // Instead of Math.sqrt(Math.PI)
+        out.println(r); // Instead of System.out
+    }
+}
+</code></pre><p>Static imports can make programs easier to read, particularly if they use many mathematical functions.</p>
+<h4 class="mume-header" id="packages">Packages</h4>
+
+<p>A package is a set of related classes.</p>
+<p><img src="Chapter_8/Packages.png" alt="Important Packages"></p>
+<p>To put one of your classes in a package, you must place a line<br>
+<code>package packageName;</code><br>
+as the first instruction in the source file containing the class.</p>
+<p>In addition to the named packages (such as java.util or com.horstmann.bigjava), there is a special package, called the default package, which has no name. If you did not include any package statement at the top of your source file, its classes are placed in the default package.</p>
+<p>The import directive lets you refer to a class of a package by its class name, without the package prefix.</p>
+<p><img src="Chapter_8/Spec.png" alt></p>
+<p>If you don&#x2019;t have your own domain name, you can still create a package name that has a high probability of being unique by writing your e-mail address backwards. For example, if Britney Walters has an e-mail address <code>walters@cs.sjsu.edu</code>, then she can use a package name edu.sjsu.cs.walters for her own classes.<br>
+Some instructors will want you to place each of your assignments into a separate package, such as homework1, homework2, and so on. The reason is again to avoid name collision. You can have two classes, homework1.Bank and homework2.Bank, with slightly different properties.</p>
+<p><img src="Chapter_8/SourceFiles.png" alt></p>
+<p>An instance variable or method that is not declared as public or private can be accessed by all classes in the same package, which is usually not desirable.</p>
+<h4 class="mume-header" id="unit-test-frameworks">Unit Test FrameWorks</h4>
+
+<p><strong>Unit test frameworks simplify the task of writing classes that contain many test cases.</strong></p>
+<p>Unit testing frameworks were designed to quickly execute and evaluate test suites and to make it easy to incrementally add test cases. One of the most popular testing frameworks is JUnit. It is freely available at <a href="http://junit.org">http://junit.org</a>, and it is also built into a number of development environments, including BlueJ and Eclipse. Here we describe JUnit 4, the most current version of the library as this book is written. When you use JUnit, you design a companion test class for each class that you develop. You provide a method for each test case that you want to have executed. You use &#x201C;annotations&#x201D; to mark the test methods.<br>
+An annotation is an advanced Java feature that places a marker into the code that is interpreted by another tool. In the case of JUnit, the @Test annotation is used to mark test methods. In each test case, you make some computations and then compute some condition that you believe to be true. You then pass the result to a method that communicates a test result to the framework, <strong>most commonly the assertEquals method. The assertEquals method takes as arguments the expected and actual values and, for floatingpoint numbers, a tolerance value.</strong></p>
+<p>It is also customary (but not required) that the name of the test class ends in Test, such as <em>CashRegisterTest</em>.<br>
+Here is a typical example:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>import org.junit.Test;
+import org.junit.Assert;
+public class CashRegisterTest
+{
+    @Test public void twoPurchases()
+    {
+        CashRegister register = new CashRegister();
+        register.recordPurchase(0.75);
+        register.recordPurchase(1.50);
+        register.receivePayment(2, 0, 5, 0, 0);
+        double expected = 0.25;
+        Assert.assertEquals(expected, register.giveChange(), EPSILON);
+    }
+    // More test cases
+    . . .
+}
+</code></pre><p>The JUnit philosophy is to run all tests whenever you change your code.</p>
+<h4 class="mume-header" id="inheritance">Inheritance</h4>
+
+<p><em>Inheritance is a relationship between a more general class (called the super&#xAD;class) and a more specialized class (called the subclass).</em><br>
+The subclass inherits data and behavior from the superclass.</p>
+<p>The <strong>substitution principle</strong> states that you can always use a subclass object when a superclass object is expected. A subclass inherits all methods that it does not override. Subclass objects automatically have the instance variables that are declared in the superclass. You only declare instance variables that are not part of the superclass objects.</p>
+<p>The subclass inherits all Media public methods from the superclass.<br>
+You declare any methods that are new to the subclass, and change the implementation of inherited methods if the inherited behavior is not appro&#xAD;priate. When you supply a new implementation for an inherited method, you override the method.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public class ChoiceQuestion extends Question
+{
+    // This instance variable is added to the subclass
+    private ArrayList&lt;String&gt; choices;
+    
+    // This method is added to the subclass
+    public void addChoice(String choice, boolean correct) { . . . }
+    
+    // This method overrides a method from the superclass
+    public void display() { . . . }
+}
+</code></pre><p>The reserved word extends denotes inheritance - indicates that a class inherits from a superclass.</p>
+<p><img src="Chapter_9/Extends.png" alt="Subclass"></p>
+<h4 class="mume-header" id="override-methods-from-superclass">Override Methods from SuperClass</h4>
+
+<p><img src="Chapter_9/Override.png" alt></p>
+<p>Unless specified otherwise, the subclass constructor calls the superclass constructor with no arguments. To call a superclass constructor, use the super reserved word in the first statement of the subclass constructor.</p>
+<p><img src="Chapter_9/super.png" alt></p>
+<h4 class="mume-header" id="polymorphism">Polymorphism</h4>
+
+<p>When you extend an existing class, you have the choice whether or not to override the methods of the superclass. Sometimes, it is desirable to force programmers to override a method.<br>
+That happens when there is no good default for the superclass and only the subclass programmer can know how to implement the method properly.</p>
+<p><code>public abstract void deductFees();</code></p>
+<p>An abstract method has no implementation. This forces the implementors of subclasses to specify concrete implementations of this method. (Of course, some subclasses might decide to implement a do-nothing method, but then that is their choice&#x2014;not a silently inherited default.)<br>
+You cannot construct objects of classes with abstract methods. For example, once the Account class has an abstract method, the compiler will flag an attempt to create a new Account() as an error.<br>
+A class for which you cannot create objects is called an abstract class. A class for which you can create objects is sometimes called a concrete class. In Java, you must declare all abstract classes with the reserved word abstract :</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public abstract class Account
+    {
+        public abstract void deductFees();
+        . . .
+        }
+        public class SavingsAccount extends Account // Not abstract
+        {
+        . . .
+        public void deductFees() // Provides an implementation
+        {
+        . . .
+    }
+} 
+</code></pre><p>If a class extends an abstract class without providing an implementation of all abstract methods, it too is abstract.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public abstract class BusinessAccount
+{
+// No implementation of deductFees
+}
+</code></pre><p>Note that you cannot construct an object of an abstract class, but you can still have an object reference whose type is an abstract class. Of course, the actual object to which it refers must be an instance of a concrete subclass:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>Account anAccount; // OK
+anAccount = new Account(); // Error&#x2014; Account is
+anAccount = new SavingsAccount(); // OK
+anAccount = null; // OK
+</code></pre><p><img src="Chapter_9/Final_Class.png" alt></p>
+<p><img src="Chapter_9/Instance_Of.png" alt></p>
+<h4 class="mume-header" id="interfaces">Interfaces</h4>
+
+<p>A Java interface type declares the methods that can be applied to a variable of that type.</p>
+<p><img src="Chapter_10/Interfaces.png" alt></p>
+<p>Now that we have a type that denotes measurability, we can implement a reusable <em>average method</em>:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public static double average(Measurable[] objects)
+{
+    double sum = 0;
+    for (Measurable obj : objects)
+    {
+        sum = sum + obj.getMeasure();
+    }
+    if (objects.length &gt; 0) { return sum / objects.length; }
+    else { return 0; }
+}
+</code></pre><p>Use the <strong>implements</strong> reserved word to indicate that a class implements an interface type.</p>
+<p>The <strong>average</strong> method of the preceding section can process objects of any class that implements the <strong>Measurable</strong> interface. A class <strong>implements</strong> an interface type if it<br>
+declares the interface in an implements clause, like this:</p>
+<p><code>public class BankAccount implements Measurable</code></p>
+<p>The class should then implement the abstract method or methods that the interface requires:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public class BankAccount implements Measurable
+{
+    . . .
+    public double getMeasure()
+    {
+    return balance;
+    }
+}
+</code></pre><p>Note that the class must declare the method as <strong>public</strong>, whereas the interface need not&#x2014;all methods in an interface are public.<br>
+Once the <strong>BankAccount</strong> class implements the <strong>Measurable</strong> interface type, <strong>BankAccount</strong> objects are instances of the <strong>Measurable</strong> type:</p>
+<p><code>Measurable obj = new BankAccount(); // OK</code></p>
+<p>A variable of type <strong>Measurable</strong> holds a reference to an object of some class that implements the <strong>Measurable</strong> interface.</p>
+<p><img src="Chapter_10/Implementing_interface.png" alt></p>
+<p><img src="Chapter_10/const_on_interfaces.png" alt></p>
+<pre class="language-text">See 10.3 for the **Comparable Interface** and **clone** method.
+</pre>
+<h4 class="mume-header" id="throw-exceptions">Throw Exceptions</h4>
+
+<p>To signal an exceptional condition, use the throw statement to throw an exception object.</p>
+<p><img src="Chapter_11/Exceptions.png" alt></p>
+<p>Place the statements that can cause an exception inside a try block, and the handler inside a catch clause.</p>
+<p><img src="Chapter_11/Catch.png" alt></p>
+<p>Add a throws clause to a method that can throw a checked exception.</p>
+<p>However, it commonly happens that the current method cannot handle the exception.<br>
+In that case, you need to tell the compiler that you are aware of this exception and that you want your method to be terminated when it occurs. You supply the method with a throws clause:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>public void readData(String filename) throws FileNotFoundException
+{
+    File inFile = new File(filename);
+    Scanner in = new Scanner(inFile);
+    . . .
+}
+</code></pre><p><img src="Chapter_11/Throws.png" alt></p>
+<p><img src="Chapter_11/Try_With.png" alt></p>
+<p><img src="Chapter_11/Assertion.png" alt></p>
+<p><img src="Chapter_11/finally.png" alt></p>
+<h4 class="mume-header" id="collections">Collections</h4>
+
+<p>A collection groups together elements and allows them to be retrieved later.</p>
+<p><img src="Chapter_15/Collections.png" alt></p>
+<ul>
+<li>A <strong>list</strong> is a collection that remembers the order of its elements.</li>
+<li>A <strong>set</strong> is an unordered collection of unique elements.</li>
+<li>A <strong>map</strong> keeps associations between key and value objects.</li>
+<li>A <strong>stack</strong> remembers the order of its elements, but it does not allow you to insert elements in every position. You can add and remove elements only at the top.</li>
+<li>In a <strong>queue</strong>, you add items to one end (the tail) and remove them from the other end (the head).</li>
+<li>A <strong>priority queue</strong> is an unordered collection that has an efficient operation for removing the element with the highest priority.</li>
+</ul>
+<p><img src="Chapter_15/Methods_Collections.png" alt></p>
+<h4 class="mume-header" id="linked-list">Linked List</h4>
+
+<p>A <strong>linked list</strong> is a data structure used for collecting a sequence of objects that allows efficient addition and removal of elements in the middle of the sequence.<br>
+A <strong>linked list</strong> consists of a number of nodes, each of which has a reference to the next node.</p>
+<ul>
+<li>Adding and removing elements at a given location in a linked list is efficient.</li>
+<li>Visiting the elements of a linked list in sequential order is efficient, but random access is not.</li>
+</ul>
+<p><img src="Chapter_15/Linked_Lists.png" alt></p>
+<p>You use a list iterator to access elements inside a linked list.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>LinkedList&lt;String&gt; employeeNames = . . .;
+ListIterator&lt;String&gt; iterator = employeeNames.listIterator();
+</code></pre><p>Note that the iterator class is also a generic type. A <code>ListIterator&lt;String&gt;</code> iterates through a list of strings; a <code>ListIterator&lt;Book&gt;</code> visits the elements in a <code>LinkedList&lt;Book&gt;</code>.<br>
+Initially, the iterator points before the first element. You can move the iterator<br>
+position with the next method:<br>
+<code>iterator.next();</code><br>
+The next method throws a NoSuchElementException if you are already past the end of the list. You should always call the iterator&#x2019;s hasNext method before calling next &#x2014; it returns true if there is a next element.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>if (iterator.hasNext())
+{
+    iterator.next();
+}
+</code></pre><p>The next method returns the element that the iterator is passing. When you use a <code>ListIterator&lt;String&gt;</code> , the return type of the next method is String . In general, the return type of the next method matches the list iterator&#x2019;s type parameter (which reflects the type of the elements in the list).<br>
+You traverse all elements in a linked list of strings with the following loop:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>while (iterator.hasNext())
+{
+    String name = iterator.next();
+    // Do something with name.
+}
+</code></pre><p>As a shorthand, if your loop simply visits all elements of the linked list, you can use the &#x201C;for each&#x201D; loop:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>for (String name : employeeNames)
+{
+    // Do something with name.
+}
+</code></pre><p><img src="Chapter_15/Iterator.png" alt></p>
+<h4 class="mume-header" id="set">Set</h4>
+
+<p>A <strong>set</strong> organizes its values in an order that is optimized for efficiency, which may not be the order in which you add elements. Inserting and removing elements is more efficient with a set than with a list.</p>
+<p>The <strong>HashSet</strong> and <strong>TreeSet</strong> classes both implement the <strong>Set interface</strong>.</p>
+<p>These two classes provide set implementations based on two different mechanisms, called <strong>hash tables and binary search trees</strong>. Both implementations arrange the set elements so that finding, adding, and removing elements is efficient, but they use different strategies.</p>
+<hr>
+<p>The basic idea of a <strong>hash table</strong> is simple. Set elements are grouped into smaller collections of elements that share the same characteristic. You can imagine a hash set of books as having a group for each color, so that books of the same color are in the same group. To find whether a book is already present, you just need to check it against the books in the same color group. Actually, hash tables don&#x2019;t use colors, but integer values (called hash codes) that can be computed from the elements. In order to use a hash table, the elements must have a method to compute those integer values. This method is called <code>hashCode</code> . The elements must also belong to a class with a properly defined <code>equals method</code> (see Section 9.5.2).</p>
+<p>Suppose you want to form a set of elements belonging to a class that you declared, such as a <code>HashSet&lt;Book&gt;</code> . Then you need to provide hashCode and equals methods for the class <code>Book</code> . There is one exception to this rule. If all elements are distinct (for example, if your program never has two Book objects with the same author and title), then you can simply inherit the <code>hashCode and equals methods</code> of the <code>Object class</code>.</p>
+<hr>
+<p>The <strong>TreeSet</strong> class uses a different strategy for arranging its ele&#xAD;ments. Elements are kept in sorted order. For example, a set of books might be arranged by height, or alphabetically by author and title. The elements are not stored in an array&#x2014;that would make adding and removing elements too inefficient. Instead, they are stored in nodes, as in a linked list. However, the nodes are not arranged in a linear sequence but in a tree shape.<br>
+In order to use a TreeSet , it must be possible to compare the ele&#xAD;ments and determine which one is &#x201C;larger&#x201D;. You can use a TreeSet for classes such as String and Integer that implement the Comparable interface, which we discussed in Section 10.3. (That section also shows you how you can implement com&#xAD;parison methods for your own classes.)</p>
+<hr>
+<p><img src="Chapter_15/Sets.png" alt><br>
+As a rule of thumb, you should choose a TreeSet if you want to visit the set&#x2019;s elements in sorted order. Otherwise choose a HashSet &#x2013; as long as the hash function is well chosen, it is a bit more efficient.<br>
+When you construct a HashSet or TreeSet , store the reference in a Set variable. For example,</p>
+<pre data-role="codeBlock" data-info class="language-"><code>Set&lt;String&gt; names = new HashSet&lt;&gt;();
+or
+Set&lt;String&gt; names = new TreeSet&lt;&gt;();
+</code></pre><p>After you construct the collection object, the implementation no longer matters; only the interface is important.</p>
+<pre class="language-text">Set implementations arrange the elements 
+so that they can locate them quickly.
+Sets don&#x2019;t have duplicates. 
+Adding a duplicate of an element 
+that is already present is ignored.
+</pre>
+<p>A set iterator visits the elements in the order in which the set implementation keeps them.</p>
+<p><img src="Chapter_15/Sets_Tip.png" alt></p>
+<h4 class="mume-header" id="map">Map</h4>
+
+<p>A map allows you to associate elements from a key set with elements from a value collection. You use a map when you want to look up objects by using a key.</p>
+<p>The <strong>HashMap</strong> and <strong>TreeMap</strong> classes both implement the <strong>Map interface</strong>.</p>
+<p>After constructing a HashMap or TreeMap, you can store the reference to the map object in a Map reference:<br>
+<code>Map&lt;String, Color&gt; favoriteColors = new HashMap&lt;&gt;();</code></p>
+<p><img src="Chapter_15/Map.png" alt></p>
+<p>To find all keys and values in a map, iterate through the key set and find the values that correspond to the keys.</p>
+<pre data-role="codeBlock" data-info class="language-"><code>Set&lt;String&gt; keySet = m.keySet();
+for (String key : keySet)
+{
+    Color value = m.get(key);
+    System.out.println(key + &quot;-&gt;&quot; + value);
+}
+</code></pre><p><img src="Chapter_15/Hash_Functions.png" alt></p>
+<h4 class="mume-header" id="stack">Stack</h4>
+
+<p>A <strong>stack</strong> lets you insert and remove elements only at one end, traditionally called the top of the stack.<br>
+New items can be added to the top of the stack. Items are removed from the top of the stack as well. Therefore, they are removed in the order that is opposite from the order in which they have been added, called last-in, first-out or <em>LIFO</em> order.</p>
+<p><img src="Chapter_15/Stack.png" alt></p>
+<h4 class="mume-header" id="queue">Queue</h4>
+
+<p>A <strong>queue</strong> lets you add items to one end of the queue (the tail) and remove them from the other end of the queue (the head). Queues yield items in a first-in, first-out or <em>FIFO</em> fashion. Items are removed in the same order in which they were added.</p>
+<p><img src="Chapter_15/Queue.png" alt></p>
+<h4 class="mume-header" id="priority-queue">Priority Queue</h4>
+
+<p>A <strong>priority queue</strong> collects elements, each of which has a priority. A typical example of a priority queue is a collection of work requests, some of which may be more urgent than others. Unlike a regular queue, the priority queue does not maintain a first-in, first-out discipline. Instead, ele&#xAD;ments are retrieved according to their priority. In other words, new items can be inserted in any order. But whenever an item is removed, it is the item with the most urgent priority.</p>
+<p><img src="Chapter_15/Priority_Queue.png" alt></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
